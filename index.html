@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6reats ✨ Kenali Kami</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #e6f0fa 0%, #c7e2ff 50%, #a4cfff 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+            color: #1a365d;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 35px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid #6fa8dc;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #2b6cb0;
+            margin-bottom: 10px;
+            letter-spacing: 4px;
+            text-shadow: 0 4px 10px rgba(43, 108, 176, 0.2);
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #2c5282;
+            margin-bottom: 15px;
+        }
+
+        .anniversary {
+            display: inline-block;
+            background: linear-gradient(90deg, #3182ce, #2b6cb0);
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 6px 15px rgba(49, 130, 206, 0.35);
+            margin-bottom: 25px;
+        }
+
+        .sosmed-utama {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .sosmed-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 22px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .sosmed-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+        }
+
+        .btn-ig {
+            background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+        }
+
+        .btn-tiktok {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+        }
+
+        .intro {
+            text-align: center;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 30px auto 50px;
+            color: #2a4365;
+        }
+
+        .judul-bagian {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #2b6cb0;
+            margin: 60px 0 30px;
+            letter-spacing: 2px;
+        }
+
+        .jadwal-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 35px;
+            margin: 60px 0;
+            border: 2px solid #6fa8dc;
+            box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+        }
+
+        .jadwal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .jadwal-kolom h4 {
+            font-size: 1.2rem;
+            color: #2c5282;
+            text-align: center;
+            padding: 10px;
+            border-radius: 12px;
+            margin-bottom: 18px;
+        }
+
+        .jadwal-lama h4 {
+            background: linear-gradient(90deg, #e2e8f0, #cbd5e0);
+            color: #2d3748;
+        }
+
+        .jadwal-baru h4 {
+            background: linear-gradient(90deg, #ebf8ff, #bee3f8);
+            color: #2b6cb0;
+        }
+
+        .jadwal-item {
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            border-radius: 10px;
+            background: rgba(247, 250, 252, 0.8);
+            border-left: 4px solid #90cdf4;
+        }
+
+        .jadwal-item .tanggal {
+            font-weight: bold;
+            color: #2b6cb0;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .jadwal-item .kegiatan {
+            color: #2a4365;
+            font-size: 0.95rem;
+        }
+
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .member-card {
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 24px;
+            padding: 30px 25px;
+            box-shadow: 0 8px 25px rgba(49, 130, 206, 0.15);
+            transition: all 0.35s ease;
+            border-top: 6px solid;
+            backdrop-filter: blur(8px);
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 14px 35px rgba(49, 130, 206, 0.25);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .member-card.shinyu { border-color: #3182ce; }
+        .member-card.dohoon { border-color: #2c5282; }
+        .member-card.youngjae { border-color: #4299e1; }
+        .member-card.hanjin { border-color: #2b6cb0; }
+        .member-card.jihoon { border-color: #63b3ed; }
+        .member-card.kyungmin { border-color: #90cdf4; }
+
+        .kepala-kartu {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .foto-profil {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+            background: #e2e8f0;
+        }
+
+        .stage-name {
+            font-size: 1.85rem;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .shinyu .stage-name { color: #2b6cb0; }
+        .dohoon .stage-name { color: #1a365d; }
+        .youngjae .stage-name { color: #2b6cb0; }
+        .hanjin .stage-name { color: #2c5282; }
+        .jihoon .stage-name { color: #3182ce; }
+        .kyungmin .stage-name { color: #4299e1; }
+
+        .real-name {
+            font-size: 1rem;
+            color: #4a5568;
+        }
+
+        .birth-date {
+            display: inline-block;
+            background: linear-gradient(90deg, #ebf4ff, #dbebff);
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: #2b6cb0;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .info-tambahan {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .mbti-badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #e0f0ff, #c7e2ff);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #2b6cb0;
+            font-weight: 600;
+        }
+
+        .ig-link {
+            display: inline-block;
+            background: linear-gradient(90deg, #ffd9e8, #ffb3d1);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #c53083;
+            font-weight: 500;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .ig-link:hover {
+            transform: scale(1.05);
+        }
+
+        .message {
+            font-style: italic;
+            line-height: 1.7;
+            color: #2a4365;
+            margin-top: 12px;
+        }
+
+        .galeri {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .bungkus-foto {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .foto-item {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 6px 18px rgba(49, 130, 206, 0.15);
+            transition: transform 0.3s ease;
+            background: #e2e8f0;
+        }
+
+        .foto-item:hover {
+            transform: scale(1.05);
+        }
+
+        .keterangan-foto {
+            text-align: center;
+            margin-top: 10px;
+            color: #2b6cb0;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .foto-keluarga {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .foto-keluarga .foto-item {
+            height: 200px;
+            border: 3px solid #90cdf4;
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.18);
+        }
+
+        .agensi-section {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 24px;
+            padding: 35px;
+            margin: 60px 0;
+            border: 2px solid #2c5282;
+            box-shadow: 0 8px 25px rgba(44, 82, 130, 0.15);
+            text-align: center;
+        }
+
+        .agensi-judul {
+            font-size: 1.5rem;
+            color: #2c5282;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .agensi-desc {
+            color: #4a5568;
+            margin-bottom: 25px;
+        }
+
+        .agensi-sosmed {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .agensi-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .agensi-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+        }
+
+        .btn-agensi-ig {
+            background: linear-gradient(90deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #fff;
+        }
+
+        .btn-agensi-yt {
+            background: #ff0000;
+            color: #fff;
+        }
+
+        .btn-agensi-tt {
+            background: linear-gradient(90deg, #000, #333);
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding-top: 30px;
+            border-top: 2px solid #90cdf4;
+            font-size: 1.05rem;
+            color: #2a4365;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💙 6reats 💙</h1>
+            <p class="subtitle">6 Bintang • Satu Langit • Satu Harapan</p>
+            <div class="anniversary">🎂 Anniversary: 11 November 2024</div>
+
+            <div class="sosmed-utama">
+                <a href="https://www.instagram.com/sobat6reats?igsh=aW9lbTM4aDJ2bjI3" target="_blank" class="sosmed-btn btn-ig">
+                    📷 Instagram
+                </a>
+                <a href="https://www.tiktok.com/@sobat.6reats?_r=1&_t=ZS-992q61W8XUP" target="_blank" class="sosmed-btn btn-tiktok">
+                    🎵 TikTok
+                </a>
+            </div>
+        </header>
+
+        <section class="intro">
+            <p>Selamat datang! 🤍<br>
+            Enam bintang yang bersatu dalam samudra biru, kami berlayar bersama membawa harapan, mimpi, dan semangat yang tak pernah padam. Yuk kenalan!</p>
+        </section>
+
+        <div class="jadwal-section">
+            <h2 class="judul-bagian">📅 Schedule</h2>
+            <div class="jadwal-grid">
+                <div class="jadwal-kolom jadwal-lama">
+                    <h4>🕒 Schedule</h4>
+
+                    <div class="jadwal-item">
+                        <span class="tanggal">19 Oktober 2025</span>
+                        <span class="kegiatan">K-Nation Event 2025</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">25 Oktober 2025</span>
+                        <span class="kegiatan">Sangsang Festival 2025</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">16 November 2025</span>
+                        <span class="kegiatan">Road To Invasion Showcase Vol.5</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">22 November 2025</span>
+                        <span class="kegiatan">Hansan Festival 2025</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">29 November 2025</span>
+                        <span class="kegiatan">Project Overdrive</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">20 Desember 2025</span>
+                        <span class="kegiatan">Peach Poppy</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">20 Desember 2025</span>
+                        <span class="kegiatan">Br1tish Noraebang Vol.2</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">24 Januari 2026</span>
+                        <span class="kegiatan">Invasion Showcase Vol.5</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">25 Januari 2026</span>
+                        <span class="kegiatan">2th Anniversary TWS</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">13 Februari 2026</span>
+                        <span class="kegiatan">KCC ID Event</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">01 Maret 2026</span>
+                        <span class="kegiatan">Bukberin Kpop 2026</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">11 April 2026</span>
+                        <span class="kegiatan">The Hidden Of Journey : Beyond The Lines</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">16 Mei 2026</span>
+                        <span class="kegiatan">TWS Comeback Special Noraebang</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">30 Mei 2026</span>
+                        <span class="kegiatan">Pajama Party</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">04 Juni 2026</span>
+                        <span class="kegiatan">Polytorn Indonesia 2026</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">07 Juni 2026</span>
+                        <span class="kegiatan">Project You You</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">14 Juni 2026</span>
+                        <span class="kegiatan">Let's Choom 2026</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">26 Juli 2026</span>
+                        <span class="kegiatan">Event Cafe</span>
+                    </div>
+                    <div class="jadwal-item">
+                        <span class="tanggal">09 Agustus 2026</span>
+                        <span class="kegiatan">K-Food & K-Seafood 2026</span>
+                    </div>
+                </div>
+
+                <div class="jadwal-kolom jadwal-baru">
+                    <h4>✨ Upcoming Schedule</h4>
+                    <div class="jadwal-item">
+                        <span class="tanggal">15 November 2026</span>
+                        <span class="kegiatan">Hansan Festival 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="judul-bagian">👤 Member</h2>
+        <section class="members-grid">
+            <div class="member-card shinyu">
+                <div class="kepala-kartu">
+                    <img src="aric.jpeg" alt="Aric" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Aric</h3>
+                        <p class="real-name">(Shinyu)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 15 Januari 2000</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: —</span>
+                    <a href="https://www.instagram.com/aaareec?igsh=cXp1YTdoamNqMHgx" target="_blank" class="ig-link">📷 @aaareec</a>
+                </div>
+                <p class="message">"Aku paling tua di sini, tapi di atas panggung, usia nggak pernah jadi soal — yang ada cuma detak musik dan kita berenam" 🌊</p>
+            </div>
+
+            <div class="member-card dohoon">
+                <div class="kepala-kartu">
+                    <img src="isal.jpeg" alt="Isal" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Isal</h3>
+                        <p class="real-name">(Dohoon)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 02 Maret 2002</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: ENFJ</span>
+                    <a href="https://www.instagram.com/faizalmzd_?igsh=cjh5Y2Z6NGFvamNj" target="_blank" class="ig-link">📷 @faizalmzd_</a>
+                </div>
+                <p class="message">"Katanya aku manja, tapi begitu berdiri di tengah panggung, semua orang harus melihat aku." 🧊</p>
+            </div>
+
+            <div class="member-card youngjae">
+                <div class="kepala-kartu">
+                    <img src="elio.jpeg" alt="Elio" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Elio</h3>
+                        <p class="real-name">(Youngjae)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 15 Mei 2006</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: —</span>
+                    <a href="https://www.instagram.com/oniliciouzz?igsh=a2RqZDdjenA4MWdq" target="_blank" class="ig-link">📷 @oniliciouzz</a>
+                </div>
+                <p class="message">"Aku pastikan semua orang di sekitarku merasa nyaman." 💧</p>
+            </div>
+
+            <div class="member-card hanjin">
+                <div class="kepala-kartu">
+                    <img src="rafli.jpeg" alt="Rafli" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Rafli</h3>
+                        <p class="real-name">(Hanjin)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 24 September 2000</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: INFJ</span>
+                    <a href="https://www.instagram.com/rafliamarizkii?igsh=cWl2OWxxYXNvbzcx" target="_blank" class="ig-link">📷 @rafliamarizkii</a>
+                </div>
+                <p class="message">"Cari aku boleh susah pas sesi foto, tenang aja — aku selalu kembali pas paling dibutuhkan." ⚓</p>
+            </div>
+
+            <div class="member-card jihoon">
+                <div class="kepala-kartu">
+                    <img src="feri.jpeg" alt="Feri" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Feri</h3>
+                        <p class="real-name">(Jihoon)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 12 Februari 2001</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: ISTP</span>
+                    <a href="https://www.instagram.com/ferifird_?igsh=MWo3Z2Q2NGtmNzZmaQ==" target="_blank" class="ig-link">📷 @ferifird_</a>
+                </div>
+                <p class="message">"Jadi pemimpin itu bukan soal siapa yang paling serius, tapi siapa yang bisa bikin yang lain tetap semangat sampai lagu terakhir." 💙</p>
+            </div>
+
+            <div class="member-card kyungmin">
+                <div class="kepala-kartu">
+                    <img src="carlos.jpeg" alt="Carlos" class="foto-profil">
+                    <div>
+                        <h3 class="stage-name">Carlos</h3>
+                        <p class="real-name">(Kyungmin)</p>
+                    </div>
+                </div>
+                <p class="birth-date">🎂 06 Maret 2007</p>
+                <div class="info-tambahan">
+                    <span class="mbti-badge">✨ MBTI: —</span>
+                    <a href="https://www.instagram.com/carlosmlaksana?igsh=b21nZjdxcjg5YXo1" target="_blank" class="ig-link">📷 @carlosmlaksana</a>
+                </div>
+                <p class="message">"Aku yang paling muda, tapi soal semangat — aku nggak pernah mau jadi yang paling belakang." 💎</p>
+            </div>
+        </section>
+
+        <h2 class="judul-bagian">📸 Memory</h2>
+        <div class="galeri">
+            <div class="bungkus-foto">
+                <img src="k-nation event 2025.jpeg" alt="K-Nation Event 2025" class="foto-item">
+                <p class="keterangan-foto">K-Nation Event 2025</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="project overdrive 2.jpeg" alt="Project Overdrive" class="foto-item">
+                <p class="keterangan-foto">Project Overdrive</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="invasion showcase vol.5.jpeg" alt="Invasion Showcase Vol.5" class="foto-item">
+                <p class="keterangan-foto">Invasion Showcase Vol.5</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="2th anniversary tws.jpeg" alt="2nd Anniversary TWS" class="foto-item">
+                <p class="keterangan-foto">2nd Anniversary TWS</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="tahun baru seollal bersama kcci.jpeg" alt="KCC ID Event" class="foto-item">
+                <p class="keterangan-foto">KCC ID Event</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="pajama party.jpeg" alt="Pajama Party" class="foto-item">
+                <p class="keterangan-foto">Pajama Party</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="project you you.jpeg" alt="Project You You" class="foto-item">
+                <p class="keterangan-foto">Project You You</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="let's choom.jpeg" alt="Let's Choom 2026" class="foto-item">
+                <p class="keterangan-foto">Let's Choom 2026</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="event cafe.jpeg" alt="Event Cafe" class="foto-item">
+                <p class="keterangan-foto">Event Cafe</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="k-food & k-seafood festa 2026.jpeg" alt="K-Food & K-Seafood Festa 2026" class="foto-item">
+                <p class="keterangan-foto">K-Food & K-Seafood Festa 2026</p>
+            </div>
+        </div>
+
+        <h2 class="judul-bagian">💙 Family</h2>
+        <div class="galeri foto-keluarga">
+            <div class="bungkus-foto">
+                <img src="family invasion.jpeg" alt="Invasion Showcase 2025" class="foto-item">
+                <p class="keterangan-foto">Invasion Showcase 2025</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="family overdrive.jpeg" alt="Project Overdrive" class="foto-item">
+                <p class="keterangan-foto">Project Overdrive</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="family 42.jpeg" alt="Anniversary TWS" class="foto-item">
+                <p class="keterangan-foto">Anniversary TWS</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="family you you.jpeg" alt="Project You You" class="foto-item">
+                <p class="keterangan-foto">Project You You</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="family let's choom.jpeg" alt="Let's Choom 2026" class="foto-item">
+                <p class="keterangan-foto">Let's Choom 2026</p>
+            </div>
+            <div class="bungkus-foto">
+                <img src="family cafe.jpeg" alt="Event Cafe" class="foto-item">
+                <p class="keterangan-foto">Event Cafe</p>
+            </div>
+        </div>
+
+        <div class="agensi-section">
+            <h3 class="agensi-judul">🏢 INVASION DC</h3>
+            <p class="agensi-desc">Ikuti juga channel resmi INVASION DC</p>
+            <div class="agensi-sosmed">
+                <a href="https://www.instagram.com/invasion__dc?igsh=MTBveGlub2MycWQ4NA==" target="_blank" class="agensi-btn btn-agensi-ig">
+                    📷 Instagram
+                </a>
+                <a href="https://youtube.com/@invasiondc?si=Cc-h2fBx_Ij8G45M" target="_blank" class="agensi-btn btn-agensi-yt">
+                    ▶️ YouTube
+                </a>
+                <a href="https://www.tiktok.com/@invasiondc?_r=1&_t=ZS-992pGlHY7Hd" target="_blank" class="agensi-btn btn-agensi-tt">
+                    🎵 TikTok
+                </a>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>6reats</strong> 💙 Enam bintang dalam satu langit biru, bersama kalian selamanya 🌊</p>
+            <p>Terima kasih telah berlayar bersama kami. Mari terus melaju menuju masa depan yang cerah! ⚓✨</p>
+        </footer>
+    </div>
+</body>
+</html>
